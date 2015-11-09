@@ -23,7 +23,6 @@ string longestCommonPrefix(vector<string>& strs) {
     return c;
 }
 
-
 int main(){
     return 1;
 }
