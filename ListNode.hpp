@@ -18,20 +18,13 @@ ostream& operator<<(ostream& os, const ListNode& n) {
         os << ";";
 }
 
-ListNode * NewList() {
-    ListNode *h = new ListNode(2);
-    ListNode *p = h;
-    p->next = new ListNode(4);
-    p = p->next;
-    p->next = new ListNode(8);
-    p = p->next;
-    p->next = new ListNode(3);
-    p = p->next;
-    p->next = new ListNode(9);
-    p = p->next;
-    p->next = new ListNode(8);
-    p = p->next;
-    p->next = new ListNode(6);
-    p = p->next;
-    return h;
+ListNode * NewList(int n) {
+    ListNode d(0), *h = &d;
+    for(int i = 1; i <= n; ++i) {
+      ListNode *p =  new ListNode(i);
+      h->next = p;
+      h = p;
+    }
+    h->next = NULL;
+    return d.next;
 }
